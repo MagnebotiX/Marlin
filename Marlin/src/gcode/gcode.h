@@ -328,6 +328,8 @@
  *** "T" Codes ***
  *
  * T0-T3 - Select an extruder (tool) by index: "T<n> F<units/min>"
+ * 
+ * M1234 - Test command
  */
 
 #include "../inc/MarlinConfig.h"
@@ -860,6 +862,7 @@ private:
   static void M204_report(const bool forReplay=true);
   static void M205();
   static void M205_report(const bool forReplay=true);
+  static void M1234();
 
   #if HAS_HOME_OFFSET
     static void M206();

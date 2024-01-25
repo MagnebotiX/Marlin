@@ -572,9 +572,9 @@ void GcodeSuite::process_parsed_command(const bool no_ok/*=false*/) {
         case 104: M104(); break;                                  // M104: Set hot end temperature
         case 109: M109(); break;                                  // M109: Wait for hotend temperature to reach target
       #endif
-
+      case 1234: M1234(); break;
       case 105: M105(); return;                                   // M105: Report Temperatures (and say "ok")
-
+    
       #if HAS_FAN
         case 106: M106(); break;                                  // M106: Fan On
         case 107: M107(); break;                                  // M107: Fan Off
@@ -1106,6 +1106,7 @@ void GcodeSuite::process_parsed_command(const bool no_ok/*=false*/) {
       #if ENABLED(HAS_MCP3426_ADC)
         case 3426: M3426(); break;                                // M3426: Read MCP3426 ADC (over i2c)
       #endif
+
 
       default: parser.unknown_command_warning(); break;
     }
